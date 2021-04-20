@@ -1,8 +1,8 @@
-import React,{lazy,Suspense} from 'react'
-import { Layout,Spin } from 'antd';
-import { Switch,Route } from 'react-router-dom'
+import React from 'react'
+import { Layout } from 'antd';
 import logo from '../../logo.svg' 
 import SideMenu from './sideMenu'
+import RouterView from './routerView.jsx'
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined
@@ -47,11 +47,7 @@ class App extends React.Component {
               minHeight: 280,
             }}
           >
-            <Suspense fallback={<div className="loading"><Spin size="large" /></div>} >
-              <Switch>
-                <Route path="/" exact component = { lazy(() => import('../../views/home/Index'))} />
-              </Switch>
-            </Suspense>
+            <RouterView></RouterView>
           </Content>
         </Layout>
       </Layout>

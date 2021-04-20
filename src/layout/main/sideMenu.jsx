@@ -1,7 +1,7 @@
 import React from 'react'
 import { Menu } from 'antd';
 import menus from './../../router/menus'
-import { useHistory } from 'react-router-dom'
+import { useHistory,useLocation } from 'react-router-dom'
 // import { Route } from 'react-router-dom'
 
 const { SubMenu } = Menu
@@ -15,7 +15,10 @@ const rootSubmenuKeys = keyArr
 
 const SideMenu = () => {
   const history = useHistory()
-  const [openKeys, setOpenKeys] = React.useState([]);
+  const location = useLocation()
+  // console.log(location)
+  const {pathname} = location
+  const [openKeys, setOpenKeys] = React.useState(['/' + pathname.split('/')[1]]);
 
   const onOpenChange = keys => {
     const latestOpenKey = keys.find(key => openKeys.indexOf(key) === -1);
@@ -47,7 +50,7 @@ const SideMenu = () => {
     history.push(path)
   }
   return (
-    <Menu onClick={changeUrl} mode="inline" openKeys={openKeys} onOpenChange={onOpenChange}>
+    <Menu theme='dark' onClick={changeUrl} mode="inline" openKeys={openKeys} onOpenChange={onOpenChange}>
       {renderMenu(menus)}
       {/* <SubMenu key="sub1" icon={<MailOutlined />} title="Navigation One">
         <Menu.Item key="1">Option 1</Menu.Item>

@@ -19,6 +19,7 @@ const menus = [
     path:'/banner',
     key:'0-1',
     icon:<PictureOutlined />,
+    redirect:'/banner/list',
     children:[
       {
         title:'轮播图列表',
@@ -39,6 +40,7 @@ const menus = [
     path:'/homeData',
     key:'0-2',
     icon:<NotificationOutlined />,
+    redirect:'/homeData/secKill',
     children:[
       {
         title:'秒杀列表',
@@ -59,6 +61,7 @@ const menus = [
     path:'/user',
     key:'0-3',
     icon:<TeamOutlined />,
+    redirect:'/user/list',
     children:[
       {
         title:'用户列表',
@@ -79,6 +82,7 @@ const menus = [
     path:'/pro',
     key:'0-4',
     icon:<TableOutlined/>,
+    redirect:'/pro/list',
     children:[
       {
         title:'商品列表',
