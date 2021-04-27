@@ -14,6 +14,7 @@ function RouterView() {
     })
   }
   const renderDirect = (menus) => {
+    // eslint-disable-next-line
     return menus.map(item=>{
       if(item.redirect){
         return <Redirect exact key={item.key} from={item.path} to={item.redirect} />

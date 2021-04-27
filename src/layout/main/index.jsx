@@ -44,7 +44,7 @@ class App extends React.Component {
             style={{
               margin: '24px 16px',
               padding: 24,
-              minHeight: 280,
+              overflow:'auto'
             }}
           >
             <RouterView></RouterView>

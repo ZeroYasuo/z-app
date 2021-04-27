@@ -97,6 +97,48 @@ const menus = [
         component:React.lazy(()=>import('./../views/pro/Search'))
       }
     ]
+  },
+  {
+    index:5,
+    title:'数据可视化',
+    path:'/data/line',
+    key:'0-5',
+    redirect:'/pro/list',
+    children:[
+      {
+        title:'折线图',
+        path:'/data/line',
+        key:'0-5-0',
+        component:React.lazy(()=>import('./../views/data/Line'))
+      },
+      {
+        title:'柱状图',
+        path:'/data/bar',
+        key:'0-5-1',
+        component:React.lazy(()=>import('./../views/data/Bar'))
+      }
+    ]
+  },
+  {
+    index:6,
+    title:'富文本编辑器',
+    path:'/form',
+    key:'0-6',
+    redirect:'/from/input',
+    children:[
+      {
+        title:'input',
+        path:'/form/input',
+        key:'0-6-0',
+        component:React.lazy(()=>import('./../views/form/input'))
+      },
+      {
+        title:'富文本编辑器',
+        path:'/form/editor',
+        key:'0-6-1',
+        component:React.lazy(()=>import('./../views/form/editor'))
+      }
+    ]
   }
 ]
 
